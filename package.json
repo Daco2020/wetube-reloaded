@@ -7,7 +7,7 @@
     "url": "git+https://github.com/Daco2020/wetube-reloaded.git"
   },
   "scripts": {
-    "win": "node index.js"
+    "dev": "nodemon --exec babel-node index.js"
   },
   "author": "Daco",
   "license": "MIT",
@@ -20,6 +20,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.0",
-    "@babel/preset-env": "^7.14.0"
+    "@babel/node": "^7.13.13",
+    "@babel/preset-env": "^7.14.0",
+    "nodemon": "^2.0.7"
   }
 }
