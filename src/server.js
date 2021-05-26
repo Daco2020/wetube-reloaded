@@ -4,9 +4,17 @@ const PORT = 5289;
 
 const app = express();
 
-const handleHome = () => console.log("go to home");
+const handleHome = (req, res) => {
+  // 첫번째가 리퀘스트, 두번째가 리스폰 > 이 2개가 있어야 함.
+  // return res.end();
+  return res.send("you are great");
+};
 
+const handleLogin = (req, res) => {
+  return res.send("Login here");
+};
 app.get("/", handleHome);
+app.get("/login", handleLogin);
 
 const handleListening = () =>
   console.log(`Server Listenting on port http://localhost:${PORT}`);
