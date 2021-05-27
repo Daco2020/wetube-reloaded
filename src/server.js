@@ -7,11 +7,11 @@ const app = express();
 const handleHome = (req, res) => {
   // 첫번째가 리퀘스트, 두번째가 리스폰 > 이 2개가 있어야 함.
   // return res.end();
-  return res.send("you are great");
+  return res.send("<h1>I am great</h1>");
 };
 
 const handleLogin = (req, res) => {
-  return res.send("Login here");
+  return res.send({ message: "Login here" });
 };
 app.get("/", handleHome);
 app.get("/login", handleLogin);
