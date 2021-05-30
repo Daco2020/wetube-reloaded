@@ -1,6 +1,6 @@
 import express from "express";
 
-const PORT = 5289;
+const PORT = 7237;
 
 const app = express();
 
@@ -22,7 +22,7 @@ app.listen(PORT, handleListening);
 
 //callback? -> 서버가 실행되었을때 시작하는 함수?
 // npm run dev -> 노드맨 터미널 실행
-// http://localhost:5289/ 서버 주소
+// http://localhost:7237/ 서버 주소
 
 //0529
 // middleware 란, 중간 소프트웨어, 요청과 응답사이의 핸들러(콘트롤러)를 의미한다.
