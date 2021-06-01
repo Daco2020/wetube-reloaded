@@ -4,9 +4,8 @@ const PORT = 7237;
 
 const app = express();
 
-const handleHome = () => console.log("Hoome");
-
-app.get("/", handleHome);
+const home = (req, res) => res.send("<h1>Hello!</h1>");
+app.get("/", home);
 
 const handleListening = () =>
   console.log(`Server Listenting on port http://localhost:${PORT}`);
@@ -16,6 +15,9 @@ app.listen(PORT, handleListening);
 //callback? -> 서버가 실행되었을때 시작하는 함수?
 // npm run dev -> 노드맨 터미널 실행
 // http://localhost:7237/ 서버 주소
+
+//0601
+// 애로우 펑션 => 에는 return 이 포함되어 있다.
 
 //0529
 // middleware 란, 중간 소프트웨어, 요청과 응답사이의 핸들러(콘트롤러)를 의미한다.
