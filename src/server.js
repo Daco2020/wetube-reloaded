@@ -4,8 +4,27 @@ const PORT = 7237;
 
 const app = express();
 
-const home = (req, res) => res.send("<h1>Hello!</h1>");
+const methodLogger = (req, res, next) => {
+  console.log("METHOD", req.method);
+  next();
+};
+
+const routerLogger = (req, res, next) => {
+  console.log("PATH", req.path);
+  next();
+};
+
+const home = (req, res) => {
+  console.log("I am great!");
+  return res.send("<h1>Hello!</h1>");
+};
+
+const login = (req, res) => {
+  return res.send("login");
+};
+app.use(methodLogger, routerLogger);
 app.get("/", home);
+app.get("/login", login);
 
 const handleListening = () =>
   console.log(`Server Listenting on port http://localhost:${PORT}`);
@@ -15,6 +34,11 @@ app.listen(PORT, handleListening);
 //callback? -> 서버가 실행되었을때 시작하는 함수?
 // npm run dev -> 노드맨 터미널 실행
 // http://localhost:7237/ 서버 주소
+
+//0602
+// 관습적으로 마지막 펑션(컨트롤러)에는 next를 넣지 않는다. 필요없기 때문
+// app.use 안에 공통으로 작용하는 함수를 넣으면 한번만 쓸 수 있다.
+//app.use 가 다른 명령어보다 위에 있어야 함. 위에서 부터 연결된다고 생각할 것
 
 //0601
 // 애로우 펑션 => 에는 return 이 포함되어 있다.
