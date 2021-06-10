@@ -9,3 +9,7 @@ videoRouter.get("/:id/edit", edit);
 videoRouter.get("/:id/delete", deleteVideo);
 
 export default videoRouter;
+
+// : > 파라미터 > url 안에 변수를 사용할 수 있게 해준다
+//
+//
