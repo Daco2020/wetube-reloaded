@@ -1,7 +1,9 @@
 doctype himl 
 html(lang="ko")
     head
-        block head
+        title #{pageTitle} | Wetube
     body
         block content
     include partials/footer
+
+<!--  #{00000} > 컨트롤러로부터 변수를 불러오고 pug가 변수를 인식할 수 있게 한다.  -->
