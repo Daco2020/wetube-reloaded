@@ -1,11 +1,22 @@
-doctype himl 
+doctype hTml 
 html(lang="ko")
     head
         title #{pageTitle} | Wetube
         link(rel="stylesheet" href="https://unpkg.com/mvp.css")
     body
+        header
+            if fakeUser.loggedIn
+                small Hello #{fakeUser.username}
+            nav
+                ul 
+                    if fakeUser.loggedIn
+                        li
+                            a(href="/login") Log out
+                    else 
+                        li
+                            a(href="/login") Log in
+            h1=pageTitle
         main 
             block content
     include partials/footer
 
-<!--  #{00000} > 컨트롤러로부터 변수를 불러오고 pug가 변수를 인식할 수 있게 한다.  -->
