@@ -1,4 +1,5 @@
-extends base.pug
+extends base
+include mixins/video
 
 block content
     h1 Home!
@@ -6,7 +7,7 @@ block content
     button send
 
     ul 
-        each video in videos 
-            li=video
+        each info in videos 
+            +video(info)
         else 
             li Sorry nothing found.
